@@ -3,6 +3,8 @@ var codeBreaker = require('./code-breaker');
 
 var app = express();
 
+let cors = require('cors') 
+app.use(cors());
 app.get('/setsecret/:secret', function (req, res) {
     let number = req.params.secret;
     codeBreaker.setSecret(number);
